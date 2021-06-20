@@ -1,6 +1,6 @@
 # Front-End project: Email Client
 
-This repo contains files which built email client for my front end project.
+This repo contains files which built email client for own front end project.
 
 ## Overview
 
