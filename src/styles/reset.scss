@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.25%;
+}
+
+body {
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button, input {
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.scroll-bar {
+    scrollbar-width: none;
+}
+.scroll-bar::-webkit-scrollbar {
+    display:none;
+}
+.scroll-bar {
+    overflow: scroll;
+    -ms-overflow-style: none;
+}

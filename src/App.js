@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import Layout from './features/Layout/Layout';
+import { getEmail } from './features/utils/api/api';
+import store from './features/utils/store/store';
+import { Provider } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    getEmail().then(data => {
+      store.dispatch({
+        type:'getEmail',
+        payload: data
+      })
+      store.dispatch({
+        type:'openEmail',
+        payload: data[0]
+      })
+    })
+  }
+  render() {
+    console.log(1, store.getState())
+    return (
+      <Provider store={store}>
+        <Layout></Layout>
+      </Provider>
+    );
+  }
 }
 
 export default App;

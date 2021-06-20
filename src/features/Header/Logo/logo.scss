@@ -1,0 +1,13 @@
+.logo {
+    .container {
+        padding: 0 1rem;
+    }
+    p {
+        color: var(--color-text-primary);
+        font: {
+            size: 3rem;
+            family: monospace;
+        }
+    }
+}
+

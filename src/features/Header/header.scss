@@ -1,0 +1,25 @@
+.header {
+    background-color: var(--color-primary);
+    .container {
+        padding: 0;
+        display: flex;
+        .input__search-wrapper {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            .input__search {
+                width: 30rem;
+            }
+        }
+        .icon-layout {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            padding-right: 1rem;
+        }
+    }
+}
