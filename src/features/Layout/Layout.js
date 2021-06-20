@@ -6,7 +6,8 @@ import Folder from '../Folder/Folder';
 import Email from '../Email/Email';
 import Item from '../Item/Item';
 import store from '../../features/utils/store/store';
-import { Segment, Rail, Grid, Sticky } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
+import Footer from '../Footer/Footer';
 
 const Layout = () => {
     return (
@@ -24,6 +25,7 @@ const Layout = () => {
                     <Item></Item>
                 </Grid.Column>
             </Grid>
+            <Footer></Footer>
         </div>
     )
 }

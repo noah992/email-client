@@ -15,7 +15,7 @@ const Email = () => {
     return (
         <div className='email'>
             <div className='container'>
-                <div className='scroll-bar' style={{height:'40rem'}}>
+                <div className='scroll-bar' style={{height:'45rem'}}>
                 <Card.Group style={{margin:'0', padding:'1rem'}}>
                     {
                         items.map(i => (
