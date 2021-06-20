@@ -14,4 +14,12 @@ This repo contains files which built email client for own front end project.
 
 ## Features
 
-### Back End
+### Accordion and Popup
+
+Folder segment is implemeted with accordion and you can see full email address by hovering on the email address.
+<img src='https://github.com/noah992/email-client/blob/master/src/asset/Accordion-and-popup.JPG?raw=true' />
+
+### Email detail
+
+I enabled to show any email detail by clicking folded email segment by using redux for state management.
+<img src='https://github.com/noah992/email-client/blob/master/src/asset/Main.JPG?raw=true' />
