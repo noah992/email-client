@@ -1,10 +1,10 @@
 import React from 'react';
 import './folder.scss';
 import { List, Icon, Accordion, Divider, Popup } from 'semantic-ui-react';
+import Email from '../Email/Email';
 
 class Folder extends React.Component {
     state = { activeIndex: [0, 1] }
-
     handleClick = (e, titleProps) => {
         const { index } = titleProps
         const { activeIndex } = this.state
@@ -12,66 +12,52 @@ class Folder extends React.Component {
         this.setState({ activeIndex: newIndex })
     }
     render() {
+        const emails = [{id:0, email:'1234abcd@xxx.com'}, {id:1, email:'chocolate.sundae@united.com'}];
+        const folders = [
+            ['envelope outline', 'Inbox'],
+            ['archive', 'Archive'],
+            ['trash alternate outline', 'Deleted'],
+            ['paper plane', 'Sent'],
+            ['star', 'Favorite']
+        ]
         return (
             <div className='folder'>
                 <div className='container'>
                     <Accordion>
-                        <Popup content='1234abcd@xxx.com' 
+                        {
+                            emails.map(item => (
+                                <>
+                                    <Popup content={item.email}
                         trigger={
                             <Accordion.Title 
-                            active={this.state.activeIndex.indexOf(0) >= 0}
-                            index={0}
+                            active={this.state.activeIndex.indexOf(item.id) >= 0}
+                            index={item.id}
                             onClick={this.handleClick}
                             style={{fontSize:'1.2rem',
                             textOverflow:'ellipsis',
                             whiteSpace:'nowrap',
-                            overflow:'hidden'
+                            overflow:'hidden',
+                            color:'inherit'
                             }}
                             >
-                            <Icon name='dropdown'></Icon>1234abcd@xxx.com</Accordion.Title>  
+                            <Icon name='dropdown'></Icon>{item.email}</Accordion.Title>  
                         } />
                            
-                        <Accordion.Content active={this.state.activeIndex.indexOf(0) >= 0}>
-                            <List size='big' style={{marginLeft:'3rem'}}>
-                                <List.Item icon='envelope outline' content='Inbox'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='archive' content='Archive'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='trash alternate outline' content='Deleted'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='paper plane' content='Sent'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='star' content='Favorite'></List.Item>
+                        <Accordion.Content active={this.state.activeIndex.indexOf(item.id) >= 0}>
+                            <List size='medium' style={{marginLeft:'3rem'}}>
+                                {
+                                    folders.map(item => (
+                                        <>
+                                            <List.Item icon={item[0]} content={item[1]}></List.Item>
+                                            <Divider style={{margin:'0.5rem 0'}}></Divider>
+                                        </>
+                                    ))
+                                }
                             </List>
                         </Accordion.Content>
-                        <Popup content='chocolate.sundae@united.com' 
-                        trigger={
-                            <Accordion.Title 
-                            active={this.state.activeIndex.indexOf(1) >= 0}
-                            index={1}
-                            onClick={this.handleClick}
-                            style={{fontSize:'1.2rem',
-                            textOverflow:'ellipsis',
-                            whiteSpace:'nowrap',
-                            overflow:'hidden'
-                            }}
-                            >
-                            <Icon name='dropdown'></Icon>chocolate.sundae@united.com</Accordion.Title>  
-                        } />
-                           
-                        <Accordion.Content active={this.state.activeIndex.indexOf(1) >= 0}>
-                            <List size='big' style={{marginLeft:'3rem'}}>
-                                <List.Item icon='envelope outline' content='Inbox'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='archive' content='Archive'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='trash alternate outline' content='Deleted'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='paper plane' content='Sent'></List.Item>
-                                <Divider style={{margin:'0.5rem 0'}}></Divider>
-                                <List.Item icon='star' content='Favorite'></List.Item>
-                            </List>
-                        </Accordion.Content>
+                                </>
+                            ))
+                        }
                     </Accordion>
                 </div>
             </div>

@@ -12,13 +12,13 @@ const Items = () => {
                     <Item.Group>
                         <Item>
                             <Item.Content>
-                                <Item.Header style={{backgroundColor:'white', fontSize:'2rem'}}>{openEmail.name}</Item.Header>
-                                <Item.Meta>
+                                <Item.Header style={{backgroundColor:'inherit', fontSize:'2rem', color:'inherit'}}>{openEmail.name}</Item.Header>
+                                <Item.Meta style={{color:'inherit'}}>
                                     <span>{openEmail.email}</span>
                                     <span>2/24/2020</span>
                                 </Item.Meta>
                                 <Divider></Divider>
-                                <Item.Description>
+                                <Item.Description style={{color:'inherit'}}>
                                     {openEmail.body}
                                 </Item.Description>
                             </Item.Content>

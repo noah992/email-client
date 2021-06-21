@@ -4,3 +4,11 @@
         max-width: 20rem;
     }
 }
+
+@media (max-width:1100px) {
+    .folder {
+        .container {
+            max-width: 10rem;
+        }
+    }
+}

@@ -1,16 +1,17 @@
 .footer {
     background-color: var(--color-primary);
-    position: absolute;
-    bottom: 0;
-    height: 3rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    // position: absolute;
+    // bottom: 0;
+    // height: 10rem;
+    // width: 100%;
+    // display: flex;
+    // justify-content: center;
     .container {
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
+        padding: 1rem 0;
         .icon-wrapper {
             display: flex;
             justify-content: center;
