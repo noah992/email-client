@@ -2,7 +2,8 @@ import React from 'react';
 import './folder.scss';
 import { List, Icon, Accordion, Divider, Popup } from 'semantic-ui-react';
 import Email from '../Email/Email';
-
+import store from '../utils/store/store';
+ 
 class Folder extends React.Component {
     state = { activeIndex: [0, 1] }
     handleClick = (e, titleProps) => {
@@ -20,6 +21,9 @@ class Folder extends React.Component {
             ['paper plane', 'Sent'],
             ['star', 'Favorite']
         ]
+        const handleCalender = (e) => {
+            store.dispatch({type:'activePage', payload:'calender'})
+        }
         return (
             <div className='folder'>
                 <div className='container'>
@@ -53,6 +57,8 @@ class Folder extends React.Component {
                                         </>
                                     ))
                                 }
+                                <List.Item icon='calendar' content='Calender' onClick={() => handleCalender()}></List.Item>
+                                <Divider style={{margin:'0.5rem 0'}}></Divider>
                             </List>
                         </Accordion.Content>
                                 </>

@@ -10,6 +10,7 @@ import { Grid } from 'semantic-ui-react';
 import Footer from '../Footer/Footer';
 import { useSelector } from 'react-redux';
 import Setting from '../Setting/Setting';
+import Calender from '../Calender/Calender';
 
 
 const Layout = () => {
@@ -31,6 +32,9 @@ const Layout = () => {
         case 'trash':
             content = <Item></Item>
             break;
+        case 'calender':
+            content = <Calender></Calender>
+            break;
         default:
             content = <Setting></Setting>
     }
@@ -38,7 +42,12 @@ const Layout = () => {
         <div className='layout'>
             <Header></Header>
             <Nav></Nav>
-            <Grid columns={3} style={{margin:'0', backgroundColor:background, color:fontColor}}>
+            <Grid columns={3} 
+            style={{
+                margin:'0', 
+                backgroundColor:background, 
+                color:fontColor,
+            }}>
                 <Grid.Column  only='computer' computer={3}>
                     <Folder></Folder>
                 </Grid.Column>

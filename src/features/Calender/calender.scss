@@ -1,0 +1,33 @@
+.calender {
+    .container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        padding: 2rem;
+        flex-direction: column;
+        header {
+            padding: 1rem;
+        }
+        table {
+            thead {
+                background-color: teal;
+                th {
+                    font-size: 1.5rem;
+                    color: white;
+                    padding: 1rem;
+                }
+            }
+            td {
+                font-size: 2rem;
+                padding: 1rem;
+                border: none;
+            }
+            tbody {
+                tr:nth-child(even) {
+                    background-color: rgb(200, 250, 200);
+                }
+            }
+        }
+    }
+}
